@@ -1,3 +1,4 @@
+import axios from 'axios'
 import { getApiKey } from '../lib/apiKey.js'
 
 export default async function getCityCoordinates(city) {
