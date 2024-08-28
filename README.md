@@ -70,3 +70,15 @@
             github_token: ${{ secrets.GITHUB_TOKEN }}
             publish_dir: .
   ```
+
+---
+
+後續 vercel 的設定
+
+1. 在 vercel dashboard 中 設定環境變數 API_KEY
+
+2. 把請求改寫成 vercel serverless functions，讓他可以使用 `process.env` 讀到環境變數，`lib/apiKey.js`
+
+3. 順便把請求抽離變成一個一個的模組在 api 資料夾底下
+
+4. `index.js` type 改成 module 才能使用 import
