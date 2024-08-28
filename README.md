@@ -25,3 +25,48 @@
   預測五天資料
 
   api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
+
+---
+
+考慮到 api 金鑰直接暴露在 index.js 中不安全，上網找尋解決方法。
+
+查到都是設定 env 檔案，因為是要推送到 github pages 顯示，所以就採用了 github secret 加上 github actions 替換的方式。
+原本以為他的替換是不會被看到的，結果還是直接暴露了。
+
+後面決定改用 vercel 部屬網站並設定環境變數的方式
+
+這次處理雖然繞了點路但也稍微了解了一點 github actions 的運作，希望以後有機會還會接觸到相關的知識吧。
+
+1. github 儲存庫 setting 設定 Repository secrets
+  把 KEY VALUE 設定在這邊
+
+2. github actions 設定 workflow
+  ```yaml
+  name: Deploy
+
+  on:
+    workflow_dispatch: # 允許手動觸發工作流
+    push:
+      branches:
+        - main
+
+  jobs:
+    deploy:
+      runs-on: ubuntu-latest
+    
+      steps:
+        - name: Checkout code
+          uses: actions/checkout@v3
+
+        - name: Replace API key in index.js 
+          run: |
+            sed -i "s/OPENWEATHER_API_KEY/${{ secrets.OPENWEATHER_API_KEY }}/g" index.js
+            cat index.js
+
+        # 部屬到 github pages
+        - name: Deploy to GitHub Pages
+          uses: peaceiris/actions-gh-pages@v3
+          with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_dir: .
+  ```
