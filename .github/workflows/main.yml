@@ -17,6 +17,7 @@ jobs:
       - name: Replace API key in index.js
         run: |
           sed -i "s/OPENWEATHER_API_KEY/${{ secrets.OPENWEATHER_API_KEY }}/g" index.js
+          cat index.js
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
