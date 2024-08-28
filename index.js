@@ -22,7 +22,7 @@ function getCityCoordinates() {
   const city = cityInput.value.trim()
   if(!city) return
 
-  const GEOCODE_API_URL = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${API_KEY}`;
+  const GEOCODE_API_URL = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${API_KEY}`;
 
   axios.get(GEOCODE_API_URL)
     .then(res => {
@@ -36,7 +36,7 @@ function getCityCoordinates() {
 
 // 根據城市名、經緯度獲取天氣
 function getWeatherDetails(cityName, lat, lon) {
-  const WEATHER_API_URL = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}`;
+  const WEATHER_API_URL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}`;
 
   axios.get(WEATHER_API_URL)
     .then(res => {
@@ -102,7 +102,7 @@ function renderForecast(item) {
 function getUserLocation() {
   navigator.geolocation.getCurrentPosition((position) => {
     const { latitude, longitude } = position.coords
-    const REVERSE_GEOCODING_URL = `http://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit1&appid=${API_KEY}`;
+    const REVERSE_GEOCODING_URL = `https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit1&appid=${API_KEY}`;
     axios.get(REVERSE_GEOCODING_URL)
       .then(res => {
         const { name } = res.data[0]
