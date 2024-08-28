@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from 'https://cdn.skypack.dev/axios';
 import { getApiKey } from '../lib/apiKey.js'
 
 export default async function getUserLocation(latitude, longitude) {
