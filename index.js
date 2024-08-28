@@ -1,4 +1,4 @@
-const API_KEY = 'OPENWEATHER_API_KEY'
+const API_KEY = process.env.OPENWEATHER_API_KEY
 
 const cityInput = document.querySelector('#countryInput')
 const searchBtn = document.querySelector('.search-btn')
