@@ -1,6 +1,7 @@
 name: Deploy
 
 on:
+  workflow_dispatch: # 允許手動觸發工作流
   push:
     branches:
       - main
