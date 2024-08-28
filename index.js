@@ -27,8 +27,8 @@ async function handleCityCoordinates() {
 
   try {
     const res = await getCityCoordinates(city)
-    if(!res.data.length) return alert('找不到城市')
-    const { name, lat, lon } = res.data[0]
+    if(!res.length) return alert('找不到城市')
+    const { name, lat, lon } = res[0]
     handleWeatherDetails(name, lat, lon)
   } catch(err) {
     alert(`發生錯誤 ${err.message}`)
@@ -41,7 +41,7 @@ async function handleWeatherDetails(cityName, lat, lon) {
   try {
     const res = await getWeatherDetails(lat, lon)
     const uniqueDayList = []
-    const fiveDaysForecast = res.data.list.filter((forecast) => {
+    const fiveDaysForecast = res.list.filter((forecast) => {
       const date = new Date(forecast.dt_txt).getDate()
       if(!uniqueDayList.includes(date)) {
         uniqueDayList.push(date)
@@ -107,8 +107,8 @@ function handleUserLocation() {
     try {
       const res = await getUserLocation(latitude, longitude)
       
-      if(!res.data.length) return alert('找不到城市')
-      const { name } = res.data[0]
+      if(!res.length) return alert('找不到城市')
+      const { name } = res[0]
       handleWeatherDetails(name, latitude, longitude)
     } catch(err) {
       alert(`無法取得位置資訊 ${err.message}`)
