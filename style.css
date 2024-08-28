@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+header {
+  text-align: center;
+  padding: 10px;
+  background-color: #6ac6fc;
+  color: #fff;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.weather-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #000;
+}
+
+.weather-input input {
+  flex: 1;
+  padding: 5px 10px;
+  margin: 0 10px;
+  border: 1px solid #000;
+}
+.weather-input .search-btn {
+  border: none;
+  padding: 5px 10px;
+  font-size: 1rem;
+  flex: 0 0 60px;
+  background-color: #6ac6fc;
+  color: #fff;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+.weather-input .search-btn:hover {
+  opacity: 0.8;
+}
+
+.currentPosition {
+  display: flex;
+  margin: 10px;
+}
+.location-btn {
+  width: 100%;
+  display: block;
+  text-align: center;
+  padding: 10px;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #6ac6fc;
+  color: #fff;
+  cursor: pointer;
+}
+.location-btn:hover {
+  opacity: 0.8;
+}
+
+.currentWeather {
+  padding: 20px;
+  margin: 10px;
+  background-color: #6ac6fc;
+  color: #fff;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.currentWeather .info {
+  font-size: 1.5rem;
+}
+.currentWeather .info h2 {
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+}
+
+
+
+.forecastWeather {
+  margin: 10px;
+}
+.forecastWeather h2 {
+  margin: 10px 0;
+}
+.weather-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+.weather-card {
+  padding: 10px;
+  flex: 1 300px;
+  background-color: #caedee;
+  color: #7e7e7e;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.weather-card .info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.weather-card .info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+.weather-card .icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 1rem;
+}

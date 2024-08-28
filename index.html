@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>天氣查詢</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header>
+    <h1>天氣查詢</h1>
+  </header>
+  <div class="main container">
+    <div class="weather-input">
+      <label for="countryInput">輸入要查詢的城鎮: </label>
+      <input type="text" list="countries" name="countryInput" id="countryInput">
+      <datalist id="countries"></datalist>
+      <button class="search-btn">查詢</button>
+    </div>
+    <div class="currentPosition">
+      <button class="location-btn">取得當前位置天氣</button>
+    </div>
+    <div class="currentWeather">
+      <div class="info">
+        <h2>_</h2>
+        <p>氣溫: _ &#176;&#67;</p>
+        <p>風速: _ M/S</p>
+        <p>濕度: _ %</p>
+      </div>
+      <div class="icon"></div>
+    </div>
+    <div class="forecastWeather">
+      <h2>未來五天預測</h2>
+      <ul class="weather-cards">
+        <li class="weather-card">
+          <div class="info">
+            <h3>_</h3>
+            <p>氣溫: _ &#176;&#67;</p>
+            <p>風速: _ M/S</p>
+            <p>濕度: _ %</p>
+          </div>
+          <div class="icon"></div>
+        </li>
+        <li class="weather-card">
+          <div class="info">
+            <h3>_</h3>
+            <p>氣溫: _ &#176;&#67;</p>
+            <p>風速: _ M/S</p>
+            <p>濕度: _ %</p>
+          </div>
+          <div class="icon"></div>
+        </li>
+        <li class="weather-card">
+          <div class="info">
+            <h3>_</h3>
+            <p>氣溫: _ &#176;&#67;</p>
+            <p>風速: _ M/S</p>
+            <p>濕度: _ %</p>
+          </div>
+          <div class="icon"></div>
+        </li>
+        <li class="weather-card">
+          <div class="info">
+            <h3>_</h3>
+            <p>氣溫: _ &#176;&#67;</p>
+            <p>風速: _ M/S</p>
+            <p>濕度: _ %</p>
+          </div>
+          <div class="icon"></div>
+        </li>
+        <li class="weather-card">
+          <div class="info">
+            <h3>_</h3>
+            <p>氣溫: _ &#176;&#67;</p>
+            <p>風速: _ M/S</p>
+            <p>濕度: _ %</p>
+          </div>
+          <div class="icon"></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="./index.js"></script>
+</body>
+</html>
