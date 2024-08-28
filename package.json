@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "![天氣預報](./asset/thumb.png)",
   "main": "index.js",
-  "directories": {
-    "lib": "lib"
-  },
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
